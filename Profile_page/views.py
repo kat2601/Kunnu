@@ -138,8 +138,8 @@ def signup(request):
 
         if pwd1 != pwd2:
             messages.info(request, "Passwords don't match")
-            return redirect('signup')  # <- you missed 'return' here
-
+            return redirect('signup')  
+        
         if User.objects.filter(username=username).exists():
             messages.info(request, "Username already taken")
             return redirect('signup')
